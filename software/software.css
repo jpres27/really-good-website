@@ -1,0 +1,27 @@
+@font-face {
+    font-family: 'FMTowns';
+    src: url('../data/fonts/Web437_FMTowns_re_8x16.woff');
+  }
+@font-face {
+    font-family: 'ToshibaSat';
+    src: url('../data/fonts/Web437_ToshibaSat_9x16.woff');
+  }
+  
+  html {
+      background-color: black;
+      color: #AAAAAA;
+    }
+
+    header {
+        font-family: 'FMTowns';
+        text-align: center;    
+    }
+
+    body {
+        font-family: 'ToshibaSat';
+        line-height: 1.2;
+    }
+
+    a {
+        color: #CC6600;
+    }

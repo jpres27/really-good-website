@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>8086 Decoder</title>
+	<link rel="stylesheet" href="software.css">
+</head>
+<header>
+  <h1>8086 Decoder</h1> 
+  <a href="https://github.com/jpres27/8086-Instruction-Decoder">Code on Github</a>
+</header>
+<body>
+  <p>2025-3-2:</p>
+  <p>
+    The 8086 Decoder was written as a part of Casey Muratori's <a href="https://www.computerenhance.com/">Performance Aware Programming Course.</a>
+    We were given only the basic problem of reading an decoding an 8086 instruction stream, without any general suggestions
+    at all as to how the software should look or what technology to use beyond this simple requirement. As of this writing,
+    the program will decode all MOV, ADD, SUB, CMP, and conditional JMP and LOOP instructions. This software is written in
+    something close to idiomatic C89, compiled with the MSVC C++ compiler.
+  </p>
+  <p>
+    The purpose behind the project is to learn intimately how instruction encoding works, and having built this over the 
+    course of many hours I can say that I won't soon forget what mod reg r/m means or the byte layout for various kinds of MOVs.
+    Intel instruction encoding being variable length means that you have no real idea how long an instruction will be until
+    you start decoding it. Based on certain bits which are usually in the first two bytes you will learn whether and what size 
+    displacement and data values follow. Going into this, I hadn't spent a ton of time dealing directly with binary files but 
+    by the end I had a fairly good sense for reading and understanding hexadecimal without needing recourse to a conversion 
+    tool, like in days of yore.
+  </p>
+  <p>
+    I briefly considered things like jump tables or more up front infrastructure for representing instructions in memory,
+    but ultimately I went with pretty straightforward decoding and a general skeleton which saves some but not all of the 
+    data which will be needed for the next section of the course: writing an 8086 simulator on top of the 
+    decoder. 
+  </p>
+  <p>
+    Given that this is a performance aware programming course, I will rewrite the decoder portion
+    in the near future and eliminate as much branching as possible, as well as potentially including the entire spec
+    as a separate file for use in generating aformentioned jump table if I decide to go that direction. It will be instructive
+    to profile the various forms that the program takes.
+  </p>
+  <p>
+    <hr>
+</p>
+<p><a href="../index.html">home</a></p>
+</body>
+
+</html>
