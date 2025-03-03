@@ -14,7 +14,60 @@
 </header>
 <body>
   <p>2025-3-2:</p>
-
+  <iframe src="https://giphy.com/embed/f9Nj4weJ7UWAXegrZ4" width="480" height="346" style="" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/f9Nj4weJ7UWAXegrZ4"></a></p>
+  <p>
+    This engine is the product of a much longer process that began about two years ago. I wanted to learn how video games are 
+    made from scratch. I got a copy of Jason Gregory's <a href="https://www.gameenginebook.com/">book</a> and read through
+    the first several sections. It did a really good job of explaining to me the contours of the knowledge which I needed to get 
+    but wasn't really as useful for learning the exact particulars. In that sense, it lived up to its name and I don't know of
+    any book that does what it does and would highly recommend it as a high level overview of game engines generally.
+  </p>
+  <p>
+    From here I somehow ended up getting into Gameboy Advance homebrew. I learned to set up the basic toolchain including 
+    <a href="https://www.coranac.com/man/tonclib/main.htm">Tonclib</a>, which would also become my first introduction to 
+    very opinionated C programming, which was going to become a mainstay of my influences going forward. I worked at it for 
+    awhile, having never programmed anything that close to the hardware before and learning a lot about how code interacts 
+    with the metal when there isn't an operating system. I ended up rendering some tilemaps and a sprite and moving him around.
+    This lead me to the issue of needing to know how to program 2D tile collision detection. I was kind of stumped. I tried a 
+    few things, looked into ways of representing which tiles collide with the sprite but I felt that everything I managed was 
+    really lacking.
+  </p>
+  <p>
+    This persistent sense that I really needed to know something more than I did to be effective lead to abandoning that 
+    project for the time being and spending several months watching and coding along with <a href="https://www.youtube.com/playlist?list=PLnuhp3Xd9PYTt6svyQPyRO_AAuMWGxPzU">Handmade Hero</a>
+    and in that time I got exactly the education I was looking for. Casey takes you from zero to a working 
+    Win32 application that plays sound and draws pixels to the window within one or two weeks worth of daily episodes. Besides learning
+    a lot of Win32 arcana, you are also watching someone program something live from scratch. For someone who was still pretty 
+    untested in terms of programming experience and ability (I had programmed a lot of small things in C++ and assembly, some 
+    school projects in Java and React Native, but nothing like this) it had marked effect on my development and style.
+  </p>
+  <p>
+    Eventually, as many HMH watchers do, I wanted to get to working on something of my own. One major thing which HMH didn't 
+    get into at all by the point I reached was modern graphics APIs and 3D rendering. So I set out to write a 3D game engine.
+    The people I talked with all recommended that I use Direct3D 11 since I had access to Windows and no prior experience.
+    It was fairly intense work to get going. I grabbed a couple of books about 3D math and a linear algebra textbook and worked
+    through them while doing some of the initial programming. 
+  </p>
+  <p>
+    Once again, I directly programmed the Win32 platform layer using what I learned in HMH. I was familiar with DirectSound
+    but upon learning that it was deprecated and probably emulated on all modern systems, I made use of a small wrapper Martins
+    Mozeiko wrote for WASAPI to provide a DirectSound-like API so that I could put off learning WASAPI for the future and keep 
+    working on the renderer. 
+  </p>
+  <p>
+    In its current state, it renders a collection of textured spheres and cubes sprinning above a landscape plane beneath 
+    a beautiful retro skybox. Sound plays, there are basic movement physics and a first person camera with mouselook. 
+    Engine performs frustum culling, supports basic transparency, and can dynamically render random numbers of objects. For 
+    whatever reason, the most memorable aspect of the project so far was learning how VSSetConstantBuffers1 works, involving the 
+    memory layout of constant buffers and how to pack it properly and iterate over it. It was a lot of anguished reading of 
+    MSDN and searching for forums posts that didn't end up providing any clear answers. But after struggling and seeking advice
+    from people I eventually had the moment where it all made sense and there was a flood of understanding. 
+  </p>
+  <p>
+    Once I get time to return to it, I need to debug some faulty point lighting code which has been proving especially 
+    irksome, pictured below.
+  </p>
+  <iframe src="https://giphy.com/embed/Dr8TnZBlQ3yZhmCs0w" width="480" height="346" style="" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/Dr8TnZBlQ3yZhmCs0w"></a></p>
   <p>
     <hr>
 </p>
